@@ -1,0 +1,103 @@
+SETTINGS
+	* settings.defaults 
+		// set base font size, line height, text color, bkgd color
+	* settings.responsive
+		// define breakpoints
+	  settings.custom // define corset width
+	  settings.colors // define colors
+
+TOOLS
+	* tools.functions
+		// define maths helpers
+	* tools.mixins
+		// define mixin used to generate font sizes with vertical rhythm
+	* tools.reponsive
+		// mixin to generate media queries based on breakpoints
+	  tools.mymixins
+	  	// bespoke mixins e.g. for vertical centering
+	* tools.widths ************ NEW ******************
+		// tool to generate width helper classes for columns
+
+
+GENERIC
+	* generic.normalize
+	* generic.reset
+	* generic.box-sizing
+	* generic.shared
+		// set default margin-bottom and margin-left on certain elements
+
+BASE
+	* base.page
+		// base styles applied to <html>
+	* base.paragraphs
+		// set .lede class
+	* base.headings
+		// define heading sizes
+	* base.lists
+		// remove extra vertical spacing in nested lists
+	* base.images
+		// fluid images, remove whitespace
+	  base.typography
+	  	// crude responsive typography settings
+
+OBJECTS
+	* objects.block
+		// stack an image above some text content
+	* objects.box
+		// box-off content and add padding
+	* objects.buttons
+		// basic button styles
+	* objects.flag
+		// define the flag object (media object with vertical align)
+	* objects.layout
+		// scaffolding for the inuit grid
+	* objects.list-bare
+		// remove indents and bullet-points from lists
+	* objects.list-block
+		// blocky-lists
+	* objects.list-inline
+		// display list items inline
+	* objects.list-ui
+		// blocky-lists with keyline separators
+	* objects.media
+		// define the media object with e.g. img alongside text
+	* objects.nav
+		// nav abstraction for e.g. making list horizontal
+	* objects.pack
+		// pack items horizontally to automatically fill their parent
+	* objects.tables
+		// table helper classes
+	* objects.tabs
+		// simple tabs abstraction
+	  objects.corset
+	  	// corset object
+	  objects.stripe
+	  	//  full-width stripe object
+
+COMPONENTS -- custom UI elements
+	  components.buttons
+	  components.notifications
+	  components.menu
+
+THEME
+	  theme.typography
+
+TRUMPS -- helper classes
+	* trumps.clearfix
+	* trumps.print
+	* trumps.spacing
+		// Margin & padding helper classes to tweak layout
+	* trumps.spacing-responsive
+		// MQ-based margin and padding tweaks
+	* trumps.widths
+		// width helper classes for use generally and in grid
+	* trumps.widths-responsive
+	* trumps.headings
+		// add .alpha, .beta etc. heading equiv. classes
+	  trumps.align
+	    // float and text-align helper classes
+	  trumps.misc
+	    // miscellaneous helper classes
+
+
+

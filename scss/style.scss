@@ -1,0 +1,345 @@
+/*****************************************************************************
+ * THIS IS THE BASE FILE WHICH PULLS IN ALL THE INDIVIDUAL .SCSS FILES
+ * TO GENERATE THE MAIN STYLE.CSS (& STYLE.MIN.CSS)
+ * INDIVIDUAL COMPONENTS CAN BE TURNED ON/OFF
+ *
+ * 1. SETTINGS FILES (Sass vars etc.)
+ *
+ * 2. TOOLS (functions & mixins)
+ *
+ * 3. GENERIC (Generic, high-level styling, like resets)
+ *
+ * 4. BASE (Unclasses HTML elements, e.g. 'h2', 'ul')
+ *
+ * 5. OBJECTS (Objects and abstractions)
+ *
+ * 6. COMPONENTS (as designed by you)
+ *
+ * 7. TRUMPS (Overrides and helper classes)
+ *
+ * 8. USER (my working file which may be split into components etc. later)
+ *		
+ *****************************************************************************/
+
+ /* ALL VARIABLES AND SWITCHES INCLUDED HERE */
+
+/*---------------------------------------------------------------------------*\
+	SETTINGS -- Sass vars etc.
+\*---------------------------------------------------------------------------*/
+
+// High-level base settings.
+$inuit-base-font-size:          16px;
+$inuit-base-line-height:        24px;
+$inuit-base-text-color:         #333;
+$inuit-base-background-color:   #fff;
+@import "../../source/inuitcss.alpha/settings.defaults/settings.defaults";
+
+// $breakpoints set here (define own instead of use inuit)
+// @import "../../source/inuitcss.alpha/settings.responsive/settings.responsive";
+@import "settings/settings.responsive";
+
+// ADD OWN SETTINGS HERE AS REQUIRED
+@import "settings/settings.custom";
+@import "settings/settings.colors";
+
+/*---------------------------------------------------------------------------*\
+	TOOLS -- Functions & mixins
+\*---------------------------------------------------------------------------*/
+
+@import "../../source/inuitcss.alpha/tools.functions/tools.functions";
+// defines re-usable functions to quarter, halve, double, quadruple
+
+@import "../../source/inuitcss.alpha/tools.mixins/tools.mixins";
+// define mixin @inuit-font-size to generate rem based font declaration with pixel
+// fallback and unitless line-height
+
+@import "../../source/inuitcss.alpha/tools.responsive/tools.responsive";
+// define media-query mixin to output media query code for breakpoint in settings
+
+
+@import "../../source/inuitcss.alpha/tools.widths/tools.widths";
+
+
+
+// ADD OWN PARTIALS WITH NAME FORMAT _<layer>.<file>.scss AS & WHERE REQUIRED
+// e.g.
+@import "tools/tools.aliases";
+// uses some shorter aliases for spacing-unit & font-size mixin
+
+@import "tools/tools.mymixins";
+// own mixins for center-vertical, responsive-bkgd-img,
+// center-vertical-responsive
+
+/*---------------------------------------------------------------------------*\
+	GENERIC -- Generic, high-level styling, like resets
+\*---------------------------------------------------------------------------*/
+
+@import "../../source/inuitcss.alpha/generic.normalize/generic.normalize";
+
+@import "../../source/inuitcss.alpha/generic.reset/generic.reset";
+
+@import "../../source/inuitcss.alpha/generic.box-sizing/generic.box-sizing";
+
+@import "../../source/inuitcss.alpha/generic.shared/generic.shared";
+// some generic settings for margin-left and margin-bottom
+
+/*---------------------------------------------------------------------------*\
+	BASE -- Unclasses HTML elements (e.g. 'h2', 'ul')
+\*---------------------------------------------------------------------------*/
+
+@import "../../source/inuitcss.alpha/base.page/base.page";
+// base styles applied to <html>
+
+$inuit-lede-size:   1.125;
+@import "../../source/inuitcss.alpha/base.paragraphs/base.paragraphs";
+
+$inuit-heading-size-1:  36px;
+$inuit-heading-size-2:  30px;
+$inuit-heading-size-3:  24px;
+$inuit-heading-size-4:  20px;
+$inuit-heading-size-5:  16px;
+$inuit-heading-size-6:  14px;
+@import "../../source/inuitcss.alpha/base.headings/base.headings";
+
+$enable-responsive-headings:     true;
+@import "base/base.typography";
+// create additional text sizes and responsive adjustments
+
+@import "../../source/inuitcss.alpha/base.lists/base.lists";
+
+@import "../../source/inuitcss.alpha/base.images/base.images";
+
+
+/*---------------------------------------------------------------------------*\
+	OBJECTS -- Objects and abstractions
+\*---------------------------------------------------------------------------*/
+
+// Override and make setting changes inline just before their partial imported
+
+$inuit-enable-block--flush:     false;
+$inuit-enable-block--tiny:      false;
+$inuit-enable-block--small:     false;
+$inuit-enable-block--large:     false;
+$inuit-enable-block--huge:      false;
+$inuit-enable-block--center:    false;
+$inuit-enable-block--right:     false;
+@import "../../source/inuitcss.alpha/objects.block/objects.block";
+// Stack an image above some text content.
+
+$inuit-enable-box--flush:   false;
+$inuit-enable-box--tiny:    false;
+$inuit-enable-box--small:   false;
+$inuit-enable-box--large:   false;
+$inuit-enable-box--huge:    false;
+@import "../../source/inuitcss.alpha/objects.box/objects.box";
+// box-off content with display:block, clearfix, padding sizes
+
+$inuit-btn-background:      $color-base;
+$inuit-btn-color:           $color-white;
+$inuit-btn-border-width:    1px;
+$inuit-btn-border-style:    solid;
+$inuit-btn-border-color:    $inuit-btn-background;
+$inuit-btn-radius:          4px;
+$inuit-enable-btn--small:   true;
+$inuit-enable-btn--large:   true;
+$inuit-enable-btn--full:    true;
+$inuit-enable-btn--pill:    true;
+@import "../../source/inuitcss.alpha/objects.buttons/objects.buttons";
+// define basic button styles
+
+$inuit-enable-flag--tiny:       false;
+$inuit-enable-flag--small:      false;
+$inuit-enable-flag--large:      false;
+$inuit-enable-flag--huge:       false;
+$inuit-enable-flag--rev:        false;
+$inuit-enable-flag--flush:      false;
+$inuit-enable-flag--top:        false;
+$inuit-enable-flag--bottom:     false;
+$inuit-enable-flag--responsive: false;
+$inuit-flag-collapse-at:        720px;
+@import "../../source/inuitcss.alpha/objects.flag/objects.flag";
+// define the flag object styles (like media-object with vertical align)
+
+$inuit-enable-layout--tiny:     false;
+$inuit-enable-layout--small:    false;
+$inuit-enable-layout--large:    false;
+$inuit-enable-layout--huge:     false;
+$inuit-enable-layout--flush:    false;
+$inuit-enable-layout--rev:      false;
+$inuit-enable-layout--middle:   false;
+$inuit-enable-layout--bottom:   false;
+$inuit-enable-layout--right:    false;
+$inuit-enable-layout--center:   false;
+$inuit-enable-layout--auto:     false;
+@import "../../source/inuitcss.alpha/objects.layout/objects.layout";
+// define layout objects for use in grid system
+
+@import "../../source/inuitcss.alpha/objects.list-bare/objects.list-bare";
+// The list-bare object simply removes any indents and bullet points from lists.
+
+$inuit-enable-list-block--tiny:     false;
+$inuit-enable-list-block--small:    false;
+$inuit-enable-list-block--large:    false;
+$inuit-enable-list-block--huge:     false;
+@import "../../source/inuitcss.alpha/objects.list-block/objects.list-block";
+// The list-block object creates blocky list items out of a `ul` or `ol`.
+
+$inuit-enable-list-inline--delimited:   false;
+$inuit-list-inline-delimit-character:   ",\00A0";
+@import "../../source/inuitcss.alpha/objects.list-inline/objects.list-inline";
+// The list-inline object simply displays a list of items in one line.
+
+$inuit-list-ui-border-width:    1px;
+$inuit-list-ui-border-style:    solid;
+$inuit-list-ui-border-color:    #ccc;
+$inuit-enable-list-ui--tiny:    false;
+$inuit-enable-list-ui--small:   false;
+$inuit-enable-list-ui--large:   false;
+$inuit-enable-list-ui--huge:    false;
+@import "../../source/inuitcss.alpha/objects.list-ui/objects.list-ui";
+// The UI list object creates blocky list items with a keyline separator out of
+// a `ul` or `ol`.
+
+$inuit-enable-media--tiny:          false;
+$inuit-enable-media--small:         false;
+$inuit-enable-media--large:         false;
+$inuit-enable-media--huge:          false;
+$inuit-enable-media--rev:           false;
+$inuit-enable-media--flush:         false;
+$inuit-enable-media--responsive:    false;
+$inuit-media-collapse-at:           720px;
+@import "../../source/inuitcss.alpha/objects.media/objects.media";
+// Place any image- and text-like content side-by-side
+
+@import "../../source/inuitcss.alpha/objects.nav/objects.nav";
+// Nav abstraction
+
+$inuit-enable-pack--auto:   false;
+$inuit-enable-pack--tiny:   false;
+$inuit-enable-pack--small:  false;
+$inuit-enable-pack--large:  false;
+$inuit-enable-pack--huge:   false;
+$inuit-enable-pack--rev:    false;
+$inuit-enable-pack--middle: false;
+$inuit-enable-pack--bottom: false;
+@import "../../source/inuitcss.alpha/objects.pack/objects.pack";
+// Cause items to pack up horizontally to automatically fill their parent.
+
+
+$inuit-table-border-width:      1px;
+$inuit-table-border-style:      solid;
+$inuit-table-border-color:      #ccc;
+$inuit-enable-table--fixed:     false;
+$inuit-enable-table--compact:   false;
+$inuit-enable-table--cosy:      false;
+$inuit-enable-table--comfy:     false;
+$inuit-enable-table--cells:     false;
+$inuit-enable-table--rows:      false;
+$inuit-enable-table--columns:   false;
+@import "../../source/inuitcss.alpha/objects.tables/objects.tables";
+// table object helper classes
+
+@import "../../source/inuitcss.alpha/objects.tabs/objects.tabs"; 
+// simple tabs abstraction with equal-width tabs
+
+// CUSTOM OBJECTS
+@import "objects/objects.corset";
+// max-width corset
+
+@import "objects/objects.stripe";
+// full-width stripes
+
+
+/*---------------------------------------------------------------------------*\
+	COMPONENTS -- Your designed UI elements
+\*---------------------------------------------------------------------------*/
+
+@import "components/components.buttons";
+// additional button styling to extend base object
+
+@import "components/components.notifications";
+// notifications
+
+$menu-break:	"mq-sm"; // which media query to collapse the menu
+@import "components/components.menu";
+// dropdown menu & mobile version
+
+
+/*---------------------------------------------------------------------------*\
+	THEME -- Skin 
+\*---------------------------------------------------------------------------*/
+@import "theme/theme.typography";
+
+
+
+
+/*---------------------------------------------------------------------------*\
+	TRUMPS -- Overrides and helper classes
+\*---------------------------------------------------------------------------*/
+
+@import "../../source/inuitcss.alpha/trumps.clearfix/trumps.clearfix";
+
+@import "../../source/inuitcss.alpha/trumps.print/trumps.print";
+
+$inuit-enable-margins:                  true;
+$inuit-enable-margins--tiny:            false;
+$inuit-enable-margins--small:           false;
+$inuit-enable-margins--large:           false;
+$inuit-enable-margins--huge:            false;
+$inuit-enable-margins--negative:        false;
+$inuit-enable-margins--negative-tiny:   false;
+$inuit-enable-margins--negative-small:  false;
+$inuit-enable-margins--negative-large:  false;
+$inuit-enable-margins--negative-huge:   false;
+$inuit-enable-margins--none:            false;
+$inuit-enable-paddings:                 false;
+$inuit-enable-paddings--tiny:           false;
+$inuit-enable-paddings--small:          false;
+$inuit-enable-paddings--large:          false;
+$inuit-enable-paddings--huge:           false;
+$inuit-enable-paddings--none:           false;
+@import "../../source/inuitcss.alpha/trumps.spacing/trumps.spacing";
+// Margin and padding helper classes. Use these to tweak layout on a micro level
+
+$inuit-enable-responsive-margins:                   false;
+$inuit-enable-responsive-margins--tiny:             false;
+$inuit-enable-responsive-margins--small:            false;
+$inuit-enable-responsive-margins--large:            false;
+$inuit-enable-responsive-margins--huge:             false;
+$inuit-enable-responsive-margins--negative:         false;
+$inuit-enable-responsive-margins--negative-tiny:    false;
+$inuit-enable-responsive-margins--negative-small:   false;
+$inuit-enable-responsive-margins--negative-large:   false;
+$inuit-enable-responsive-margins--negative-huge:    false;
+$inuit-enable-responsive-margins--none:             false;
+$inuit-enable-responsive-paddings:                  false;
+$inuit-enable-responsive-paddings--tiny:            false;
+$inuit-enable-responsive-paddings--small:           false;
+$inuit-enable-responsive-paddings--large:           false;
+$inuit-enable-responsive-paddings--huge:            false;
+$inuit-enable-responsive-paddings--none:            false;
+@import "../../source/inuitcss.alpha/trumps.spacing-responsive/trumps.spacing-responsive";
+// Margin and padding helper classes. Use these to tweak layout on a micro level
+
+$inuit-use-fractions:    false;
+@import "../../source/inuitcss.alpha/trumps.widths/trumps.widths";
+// Width helper classes to size things like grid systems
+
+@import "../../source/inuitcss.alpha/trumps.widths-responsive/trumps.widths-responsive";
+// Responsive width classes based on your responsive settings.
+
+@import "../../source/inuitcss.alpha/trumps.headings/trumps.headings";
+// Add .alpha, .beta etc. helper classes equivalent to headings
+
+@import "trumps/trumps.align";
+// alignment helper classes
+
+@import "trumps/trumps.misc";
+// sundry helper classes
+
+/*---------------------------------------------------------------------------*\
+	USER -- working file of user-generated styling
+\*---------------------------------------------------------------------------*/
+@import "working/working.user";
+
+// THAT'S IT //
