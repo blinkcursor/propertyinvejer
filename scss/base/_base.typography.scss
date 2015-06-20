@@ -54,6 +54,45 @@ small, .milli {
 	@include inuit-font-size(10px);
 }
 
+// "responsive" versions
+@if ($enable-responsive-headings == true) {
+	.kilo {
+		@include media-query(mq-sm) {
+			@include inuit-font-size(42px);
+		}
+		@include media-query(mq-xs) {
+			@include inuit-font-size(34px);
+		}
+	}
+
+	.mega {
+		@include media-query(mq-sm) {
+			@include inuit-font-size(56px);
+		}
+		@include media-query(mq-xs) {
+			@include inuit-font-size(40px);
+		}
+	}
+
+	.giga {
+		@include media-query(mq-sm) {
+			@include inuit-font-size(70px);
+		}
+		@include media-query(mq-xs) {
+			@include inuit-font-size(56px);
+		}
+	}
+
+	.tera {
+		@include media-query(mq-sm) {
+			@include inuit-font-size(86px);
+		}
+		@include media-query(mq-xs) {
+			@include inuit-font-size(68px);
+		}	
+	}
+}
+
 
 // Add responsive sizes for headings
 @if ($enable-responsive-headings == true) {

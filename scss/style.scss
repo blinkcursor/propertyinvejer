@@ -1,3 +1,13 @@
+// Import other css files to combine into single minified file
+// Include here before working file so that can overwrite
+// Redefine paths
+$slick-font-path: "../resources/slick/fonts/";
+$slick-loader-path: "../resources/slick/";
+@import "../resources/slick/slick";
+@import "../resources/slick/slick-theme";
+
+
+
 /*****************************************************************************
  * THIS IS THE BASE FILE WHICH PULLS IN ALL THE INDIVIDUAL .SCSS FILES
  * TO GENERATE THE MAIN STYLE.CSS (& STYLE.MIN.CSS)
@@ -37,7 +47,7 @@ $inuit-base-background-color:   #fff;
 // $breakpoints set here (define own instead of use inuit)
 // @import "../../source/inuitcss.alpha/settings.responsive/settings.responsive";
 @import "settings/settings.responsive";
-
+ 
 // ADD OWN SETTINGS HERE AS REQUIRED
 @import "settings/settings.custom";
 @import "settings/settings.colors";
@@ -56,7 +66,7 @@ $inuit-base-background-color:   #fff;
 @import "../../source/inuitcss.alpha/tools.responsive/tools.responsive";
 // define media-query mixin to output media query code for breakpoint in settings
 
-
+$inuit-use-fractions:    false;
 @import "../../source/inuitcss.alpha/tools.widths/tools.widths";
 
 
@@ -101,9 +111,12 @@ $inuit-heading-size-5:  16px;
 $inuit-heading-size-6:  14px;
 @import "../../source/inuitcss.alpha/base.headings/base.headings";
 
-$enable-responsive-headings:     true;
+$enable-responsive-headings:     false;
 @import "base/base.typography";
 // create additional text sizes and responsive adjustments
+
+@import "base/base.font";
+// set font-family definitions
 
 @import "../../source/inuitcss.alpha/base.lists/base.lists";
 
@@ -126,12 +139,13 @@ $inuit-enable-block--right:     false;
 @import "../../source/inuitcss.alpha/objects.block/objects.block";
 // Stack an image above some text content.
 
-$inuit-enable-box--flush:   false;
-$inuit-enable-box--tiny:    false;
-$inuit-enable-box--small:   false;
-$inuit-enable-box--large:   false;
-$inuit-enable-box--huge:    false;
-@import "../../source/inuitcss.alpha/objects.box/objects.box";
+$inuit-enable-panel--flush:   true;
+$inuit-enable-panel--tiny:    true;
+$inuit-enable-panel--small:   true;
+$inuit-enable-panel--large:   true;
+$inuit-enable-panel--huge:    true;
+$inuit-enable-panel--responsive:    true;
+@import "objects/objects.panel";
 // box-off content with display:block, clearfix, padding sizes
 
 $inuit-btn-background:      $color-base;
@@ -160,17 +174,17 @@ $inuit-flag-collapse-at:        720px;
 @import "../../source/inuitcss.alpha/objects.flag/objects.flag";
 // define the flag object styles (like media-object with vertical align)
 
-$inuit-enable-layout--tiny:     false;
-$inuit-enable-layout--small:    false;
-$inuit-enable-layout--large:    false;
-$inuit-enable-layout--huge:     false;
-$inuit-enable-layout--flush:    false;
-$inuit-enable-layout--rev:      false;
-$inuit-enable-layout--middle:   false;
-$inuit-enable-layout--bottom:   false;
-$inuit-enable-layout--right:    false;
-$inuit-enable-layout--center:   false;
-$inuit-enable-layout--auto:     false;
+$inuit-enable-layout--tiny:     true;
+$inuit-enable-layout--small:    true;
+$inuit-enable-layout--large:    true;
+$inuit-enable-layout--huge:     true;
+$inuit-enable-layout--flush:    true;
+$inuit-enable-layout--rev:      true;
+$inuit-enable-layout--middle:   true;
+$inuit-enable-layout--bottom:   true;
+$inuit-enable-layout--right:    true;
+$inuit-enable-layout--center:   true;
+$inuit-enable-layout--auto:     true;
 @import "../../source/inuitcss.alpha/objects.layout/objects.layout";
 // define layout objects for use in grid system
 
@@ -257,6 +271,9 @@ $inuit-enable-table--columns:   false;
 @import "components/components.buttons";
 // additional button styling to extend base object
 
+$inuit-notification-padding:			$inuit-base-spacing-unit;
+$inuit-notification-border-width:		12px;
+$inuit-notification-border-color:		$color-secondary;
 @import "components/components.notifications";
 // notifications
 
@@ -269,8 +286,6 @@ $menu-break:	"mq-sm"; // which media query to collapse the menu
 	THEME -- Skin 
 \*---------------------------------------------------------------------------*/
 @import "theme/theme.typography";
-
-
 
 
 /*---------------------------------------------------------------------------*\
@@ -340,6 +355,7 @@ $inuit-use-fractions:    false;
 /*---------------------------------------------------------------------------*\
 	USER -- working file of user-generated styling
 \*---------------------------------------------------------------------------*/
+
 @import "working/working.user";
 
-// THAT'S IT //
+// THAT'S IT // 

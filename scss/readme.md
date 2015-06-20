@@ -43,7 +43,7 @@ BASE
 OBJECTS
 	* objects.block
 		// stack an image above some text content
-	* objects.box
+	  objects.panel // use instead of objects.box
 		// box-off content and add padding
 	* objects.buttons
 		// basic button styles
