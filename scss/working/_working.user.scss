@@ -242,8 +242,18 @@ cite {
 }
 
 .instapic > img {
-	width: 25%;
+	width: 100%;
+  @include media-query(mq-sm-up) {
+    width: 50%;
+  }
+  @include media-query(mq-md-up) {
+    width: 33.33%;
+  }
+  @include media-query(mq-lg-up) {
+    width: 25%;
+  }
 }
+
 
 footer nav {
   margin-bottom: 2em;
