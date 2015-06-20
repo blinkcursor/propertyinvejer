@@ -170,6 +170,9 @@ p {
   height: 120px;
   padding-left: 2em;
   transition: transform 2s;
+  @include media-query(mq-sm) {
+    padding-left: 4px;
+  }
 }
 .ribbon:after {
   content: '';
@@ -180,6 +183,10 @@ p {
   width: 0;
   border-top: 120px solid rgba($color-dark, 0.8);
   border-right: 60px solid transparent;
+  @include media-query(mq-sm) {
+    right: -40px;
+    border-right-width: 40px;
+  }
 }
 
 .ribbon > h2, .ribbon > p {
@@ -194,8 +201,11 @@ p {
 }
 
 blockquote {
-  padding-left: 2em;
+  padding-left: 1em;
   border-left: 1px solid #ddd;
+  @include media-query(mq-md-up) {
+    padding-left: 2em;
+  }
 }
 cite {
   display: block;

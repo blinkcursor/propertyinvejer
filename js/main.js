@@ -15,18 +15,24 @@ $(function() { // WRAP EVERYTHING UP IN DOM READY
      return $(elem).offset().top - $(window).scrollTop() < $(elem).height() ;
   }
 
-  // Initialise instafeed
+  // Initialise instafeed (only onscroll to save initial page load)
   var $instafeed = document.getElementById('instafeed');
   if ( $instafeed ) {
-    var feed = new Instafeed({
-        get: 'tagged',
-        tagName: 'vejer',
-        sortBy: 'random',
-        clientId: 'd8a69f232d6e4a44a49d380f239a08f1',
-        resolution: 'low_resolution',
-        template: '<a class="instapic" href="{{link}}" target="_blank"><img src="{{image}}" /></a>'
+    $(window).scroll( function() {
+      var $width = $(window).width(),
+      limit = ( $width < 360 ) ? 8 : 20,
+      feed = new Instafeed({
+          get: 'tagged',
+          limit: limit,
+          tagName: 'vejer',
+          sortBy: 'random',
+          clientId: 'd8a69f232d6e4a44a49d380f239a08f1',
+          resolution: 'low_resolution',
+          template: '<a class="instapic" href="{{link}}" target="_blank"><img src="{{image}}" /></a>'
+      });
+      feed.run();
+      $(window).off( "scroll" );
     });
-    feed.run();    
   }
 
   // Initialise slick slider on home page
