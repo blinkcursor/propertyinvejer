@@ -237,8 +237,9 @@ cite {
   top: 2em;
   right: 2em;
 }
-
-
+.nav.lang-switcher > li {
+   display: inline-block;
+}
 
 .instapic > img {
 	width: 25%;
