@@ -109,9 +109,10 @@ $(function() { // WRAP EVERYTHING UP IN DOM READY
         }).done(function(data) {
             if (data.success) {
                 $('button[type="submit"]').remove();
-                $form.append('<div class="alert-box success">' + msgSuccess + '</div>');
+                console.log('removed button');
+                $form.append('<div class="notification success">' + msgSuccess + '</div>');
             } else {
-                $form.append('<div class="alert-box alert">' + msgFail + '</div>');
+                $form.append('<div class="notification alert">' + msgFail + '</div>');
             }
         });
     });
