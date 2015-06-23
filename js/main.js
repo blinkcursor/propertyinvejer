@@ -1,3 +1,6 @@
+// @codekit-prepend "vendor/instafeed.min.js"
+// @codekit-prepend "../resources/slick/slick.js"
+
 $(function() { // WRAP EVERYTHING UP IN DOM READY
   // var $body = $('body'); //cache body
 
@@ -53,14 +56,15 @@ $(function() { // WRAP EVERYTHING UP IN DOM READY
   var $sF = $('.slider-featured');
   if ( $sF.length !== 0 ) {
     $sF.slick({
-      lazyLoad: "ondemand",
-      infinite: true,
-      speed: 600,
-      slidesToShow: 1,
+   
+      lazyLoad: "progressive", // bug with slick, "ondemand" not working
+      autoplay: false,
+      autoplaySpeed: 2500,
       centerMode: true,
       variableWidth: true,
-      autoplay: false,
-      autoplaySpeed: 2500
+      speed: 600,
+      slidesToShow: 1,
+      infinite: true,
     });
 
     $(window).scroll( function(){
