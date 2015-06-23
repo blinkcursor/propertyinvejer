@@ -41,6 +41,7 @@ $(function() { // WRAP EVERYTHING UP IN DOM READY
     $sV.slick({
       autoplay: true,
       autoplaySpeed: 3000,
+      lazyLoad: 'ondemand',
       centerMode: true,
       variableWidth: true,
       speed: 600,
@@ -54,6 +55,7 @@ $(function() { // WRAP EVERYTHING UP IN DOM READY
     $sF.slick({
       infinite: true,
       speed: 600,
+      lazyLoad: 'ondemand',
       slidesToShow: 1,
       centerMode: true,
       variableWidth: true,
