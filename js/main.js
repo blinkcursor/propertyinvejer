@@ -39,6 +39,7 @@ $(function() { // WRAP EVERYTHING UP IN DOM READY
   var $sV = $('.slider-vejer');
   if ( $sV.length !== 0 ) {
     $sV.slick({
+      lazyLoad: "progressive",
       autoplay: true,
       autoplaySpeed: 3000,
       centerMode: true,
@@ -52,6 +53,7 @@ $(function() { // WRAP EVERYTHING UP IN DOM READY
   var $sF = $('.slider-featured');
   if ( $sF.length !== 0 ) {
     $sF.slick({
+      lazyLoad: "ondemand",
       infinite: true,
       speed: 600,
       slidesToShow: 1,
