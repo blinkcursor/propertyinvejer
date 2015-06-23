@@ -93,6 +93,30 @@ $(function() { // WRAP EVERYTHING UP IN DOM READY
     });
   }
 
+  // Set up ajax form handling via formspree.io
+  $form = $('.contact-form');
+  if ( $form.length !== 0 ) {
+    $form.submit(function(event){
+        var msgSuccess = "Thank you! We'll be in touch soon.";
+        var msgFail = "Oops. Something went wrong, please try again.";
+        var formData = $(this).serialize();
+        $.ajax({
+            url: "//formspree.io/info@propertyinvejer.com",
+            method: "POST",
+            data: formData,
+            dataType: "json"
+        }).done(function(data) {
+            if (data.success) {
+                $('input[type="submit"]').remove();
+                $form.append('<div class="alert-box success">' + msgSuccess + '</div>');
+            } else {
+                $form.append('<div class="alert-box alert">' + msgFail + '</div>');
+            }
+        });
+        event.preventDefault();
+    });
+  }
+
   function mapInit() {
     var mapOptions = {
       zoom: 10,
