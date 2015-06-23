@@ -41,7 +41,7 @@ $(function() { // WRAP EVERYTHING UP IN DOM READY
     $sV.slick({
       autoplay: true,
       autoplaySpeed: 3000,
-      lazyLoad: 'ondemand',
+      lazyLoad: 'progressive',
       centerMode: true,
       variableWidth: true,
       speed: 600,
