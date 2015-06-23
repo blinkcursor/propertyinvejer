@@ -100,6 +100,7 @@ $(function() { // WRAP EVERYTHING UP IN DOM READY
         var msgSuccess = "Thank you! We'll be in touch soon.";
         var msgFail = "Oops. Something went wrong, please try again.";
         var formData = $(this).serialize();
+        event.preventDefault();
         $.ajax({
             url: "//formspree.io/info@propertyinvejer.com",
             method: "POST",
@@ -107,13 +108,12 @@ $(function() { // WRAP EVERYTHING UP IN DOM READY
             dataType: "json"
         }).done(function(data) {
             if (data.success) {
-                $('input[type="submit"]').remove();
+                $('button[type="submit"]').remove();
                 $form.append('<div class="alert-box success">' + msgSuccess + '</div>');
             } else {
                 $form.append('<div class="alert-box alert">' + msgFail + '</div>');
             }
         });
-        event.preventDefault();
     });
   }
 
