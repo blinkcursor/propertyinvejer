@@ -28,13 +28,15 @@ a:hover, li.active > a {
 */
 
 .ui-masthead {
-  background: url(../img/1400/vejer_de_la_frontera.jpg) no-repeat center center;
+  background: url(../img/1400/vejer_pueblo.jpg) no-repeat center center;
   background-size: cover;
   height: 600px;
   height: 90vh;
+  max-height: 825px;
   color: #fff;
   @include media-query(mq-sm) {
-    background-image: url(../img/768/vejer_de_la_frontera.jpg);
+    background-image: url(../img/768/vejer_pueblo.jpg);
+    max-height: 450px;
   }
 }
 .panel {
@@ -49,10 +51,16 @@ a:hover, li.active > a {
 .panel--light {
 	background-color: $color-whitish;
 }
+
 .panel--primary {
   background-color: $color-primary;
   color: #fff;
-}
+  background-image: linear-gradient( to bottom right, rgba(32, 97, 165, 0), rgb(32, 97, 165) ),
+                    linear-gradient( to top right, rgba(104, 171, 225, 0), rgb(104, 171, 225) ),
+                    linear-gradient( to top left, rgba(155, 211, 242, 0), rgb(155, 211, 242) ),
+                    linear-gradient( to bottom left, rgba(67, 136, 201, 0), rgb(67, 136, 201) )
+};
+
 .panel--secondary {
   background-color: $color-secondary; 
 }
@@ -112,23 +120,27 @@ p {
   font-size: 1em;
 }
 .ui-sidebar {
-  padding: 48px 12px;
   background-color: $color-whitish;
+  @include media-query(mq-lg-up) {
+    padding: 48px 12px;
+  }
 }
 
 .ui-featured-property {
-  background: url(../img/1400/oscuro_hammock_mezzanine.jpg) no-repeat center center;
+  background: url(../img/1400/oscuro_hammock_bed.jpg) no-repeat center center;
   background-size: cover;
   height: 600px;
-  height: 90vh;
+  height: 100vh;
+  max-height: 1006px;
   color: #fff;
   @include media-query(mq-sm) {
-    background-image: url(../img/768/oscuro_hammock_mezzanine.jpg);
+    background-image: url(../img/768/oscuro_hammock_bed.jpg);
+    max-height: 552px;
   }
 }
 .ui-featured-property__shrink {
-  height: 500px;
-  height: 70vh;
+  height: 600px;
+  height: 85vh;
 }
 
 .featured-property--plans > img {
@@ -300,21 +312,21 @@ footer nav {
   width: 100%;
   background: transparent;
   margin-bottom: 1em;
-  border: 1px solid $color-form;
+  border: 1px solid $border-color;
 }
 
 
 .btn--links {
-    background-color: $color-form;
-    border-color: $color-form;
-    border-bottom-color: darken($color-form, 15%);
+    background-color: $border-color;
+    border-color: $border-color;
+    border-bottom-color: darken($border-color, 15%);
     color:  $color-whitish;
     &:hover,
     &:active,
     &:focus {
-        background-color: lighten($color-form, 15%);
-        border-color: lighten($color-form, 15%);
-        border-bottom-color: $color-form;
+        background-color: lighten($border-color, 15%);
+        border-color: lighten($border-color, 15%);
+        border-bottom-color: $border-color;
     }
 }
 
@@ -358,9 +370,19 @@ footer nav {
   left: 5px;
 }
 .slider img {
-  border-top: 10px solid #fff;
-  border-bottom: 10px solid #fff;
-  border-left: 5px solid #fff;
-  border-right: 5px solid #fff;
-  max-height: 100vh;
+  border-top: 4px solid #fff;
+  border-bottom: 4px solid #fff;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #fff;
+  max-height: 100vh; // problem that slick ignores this, need to set actual height
 }
+
+
+/*
+.panel--primary--bork {
+  background-image: -webkit-linear-gradient(left top, rgba(32, 97, 165, 0) 0%, rgb(32, 97, 165) 100%), 
+                    -webkit-linear-gradient(left bottom, rgba(104, 171, 225, 0) 0%, rgb(104, 171, 225) 100%), 
+                    -webkit-linear-gradient(right bottom, rgba(155, 211, 242, 0) 0%, rgb(155, 211, 242) 100%), 
+                    -webkit-linear-gradient(right top, rgba(67, 136, 201, 0) 0%, rgb(67, 136, 201) 100%);
+}
+*/
