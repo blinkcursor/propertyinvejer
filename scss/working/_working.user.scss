@@ -180,8 +180,16 @@ p {
   text-align: right;
 }
 
+
+.panel__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 .ribbon {
-  display: inline-block;
   position: absolute;
   left: 0;
   background-color: rgba($color-dark, 0.8);
