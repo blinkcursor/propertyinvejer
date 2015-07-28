@@ -323,21 +323,19 @@ footer nav {
   border: 1px solid $border-color;
 }
 
-
 .btn--links {
-    background-color: $border-color;
-    border-color: $border-color;
-    border-bottom-color: darken($border-color, 15%);
+    background-color: $color-links;
+    border-color: $color-links;
+    border-bottom-color: darken($color-links, 15%);
     color:  $color-whitish;
     &:hover,
     &:active,
     &:focus {
-        background-color: lighten($border-color, 15%);
-        border-color: lighten($border-color, 15%);
-        border-bottom-color: $border-color;
+        background-color: lighten($color-links, 15%);
+        border-color: lighten($color-links, 15%);
+        border-bottom-color: $color-links;
     }
 }
-
 
 #map {
   width: 100%;
@@ -386,11 +384,6 @@ footer nav {
 }
 
 
-/*
-.panel--primary--bork {
-  background-image: -webkit-linear-gradient(left top, rgba(32, 97, 165, 0) 0%, rgb(32, 97, 165) 100%), 
-                    -webkit-linear-gradient(left bottom, rgba(104, 171, 225, 0) 0%, rgb(104, 171, 225) 100%), 
-                    -webkit-linear-gradient(right bottom, rgba(155, 211, 242, 0) 0%, rgb(155, 211, 242) 100%), 
-                    -webkit-linear-gradient(right top, rgba(67, 136, 201, 0) 0%, rgb(67, 136, 201) 100%);
+.ui-textures > img {
+  width: 20%;
 }
-*/
