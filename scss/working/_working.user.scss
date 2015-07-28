@@ -44,6 +44,9 @@ a:hover, li.active > a {
 	min-height: 200px;
 	background-color: #fff;
 }
+.panel--fit {
+  min-height: none;
+}
 .panel--dark {
 	background-color: $color-dark;
 	color: #fff;
