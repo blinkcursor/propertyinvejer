@@ -31,7 +31,10 @@ $(function() { // WRAP EVERYTHING UP IN DOM READY
           sortBy: 'random',
           clientId: 'd8a69f232d6e4a44a49d380f239a08f1',
           resolution: 'low_resolution',
-          template: '<a class="instapic" href="{{link}}" target="_blank"><img src="{{image}}" /></a>'
+          template: '<a class="instapic" href="{{link}}" target="_blank"><img src="{{image}}" /></a>'//,
+          //filter: function(image) {
+          //  return image.user.username !== "ponientecomplementos";
+          //} Problem: returns less than limit if some images are excluded by filter...
       });
       feed.run();
       $(window).off( "scroll" );
